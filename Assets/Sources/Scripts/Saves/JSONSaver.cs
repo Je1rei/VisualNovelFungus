@@ -53,6 +53,17 @@ public class JSONSaver : MonoBehaviour
         _nextID++;
     }
 
+    public void DeleteSaves()
+    {
+        DirectoryInfo directory = new DirectoryInfo(Application.persistentDataPath);
+        FileInfo[] files = directory.GetFiles($"*.json");
+
+        foreach(FileInfo file in files)
+        {
+            file.Delete();
+        }
+    }
+
     public void SavePlayerNow()
     {
         if (_container != null)
