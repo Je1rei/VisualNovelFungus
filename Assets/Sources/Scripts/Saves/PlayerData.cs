@@ -24,4 +24,6 @@ public class PlayerData
     {
         _stats = stats;
     }
+
+    public PlayerStatsData GetStats() => _stats;
 }

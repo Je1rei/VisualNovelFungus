@@ -721,6 +721,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134008558}
   m_CullTransparentMesh: 1
+--- !u!1001 &1157893171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.7235997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2075907
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.06838219
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092188172252102046, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154827101613729453, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+      propertyPath: m_Name
+      value: Container
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
 --- !u!1 &1203879990
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,9 +897,11 @@ GameObject:
   - component: {fileID: 1384018012}
   - component: {fileID: 1384018010}
   - component: {fileID: 1384018013}
+  - component: {fileID: 1384018015}
+  - component: {fileID: 1384018014}
   m_Layer: 0
   m_Name: Flowchart
-  m_TagString: Untagged
+  m_TagString: FlowChart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -863,7 +922,7 @@ MonoBehaviour:
   scrollPos: {x: 303.8515, y: 68.690414}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 471
+  blockViewHeight: 579
   zoom: 0.8200002
   scrollViewRect:
     serializedVersion: 2
@@ -871,11 +930,11 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1384017996}
-  selectedCommands:
-  - {fileID: 1384018009}
-  variables: []
+  selectedBlocks: []
+  selectedCommands: []
+  variables:
+  - {fileID: 1384018015}
+  - {fileID: 1384018014}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -928,7 +987,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 68.85669
-    y: 49.812065
+    y: 48.592552
     width: 126.829254
     height: 40
   tint: {r: 1, g: 0, b: 0, a: 1}
@@ -1370,7 +1429,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 75.416626
-    y: 305.69974
+    y: 304.48022
     width: 90.2439
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1624,8 +1683,9 @@ MonoBehaviour:
   itemId: 35
   indentLevel: 0
   storyText: "\u0414\u0430, \u044D\u0442\u043E \u0432\u044B\u0433\u043B\u044F\u0434\u0438\u0442
-    \u0443\u0436\u0430\u0441\u043D\u043E. \u0414\u0430\u0432\u0430\u0439 \u043E\u0442\u0441\u043E\u0440\u0442\u0438\u0440\u0443\u0435\u043C
-    \u044D\u0442\u043E\u0442 \u043C\u0443\u0441\u043E\u0440 \u0438 \u0432\u044B\u0431\u0440\u043E\u0441\u0438\u043C
+    \u0443\u0436\u0430\u0441\u043D\u043E. {$playerName}, \u0434\u0430\u0432\u0430\u0439
+    \u043E\u0442\u0441\u043E\u0440\u0442\u0438\u0440\u0443\u0435\u043C \u044D\u0442\u043E\u0442
+    \u043C\u0443\u0441\u043E\u0440 \u0438 \u0432\u044B\u0431\u0440\u043E\u0441\u0438\u043C
     \u0435\u0433\u043E \u0432 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435
     \u043A\u043E\u043D\u0442\u0435\u0439\u043D\u0435\u0440\u044B?"
   description: 
@@ -1793,8 +1853,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 59.56304
-    y: 455.6997
+    x: 55.904503
+    y: 456.91922
     width: 125.60974
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1839,6 +1899,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76be178414b4c9a4e91e79b0fa476ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1384018014
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384017921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: isLoaded
+  value: 0
+--- !u!114 &1384018015
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384017921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: playerName
+  value: 
 --- !u!1 &1405294291
 GameObject:
   m_ObjectHideFlags: 1
@@ -2476,3 +2566,4 @@ SceneRoots:
   - {fileID: 1384017926}
   - {fileID: 21805966}
   - {fileID: 1405294293}
+  - {fileID: 1157893171}
