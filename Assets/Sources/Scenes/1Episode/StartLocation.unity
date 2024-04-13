@@ -837,9 +837,10 @@ GameObject:
   - component: {fileID: 1384018000}
   - component: {fileID: 1384017999}
   - component: {fileID: 1384018001}
-  - component: {fileID: 1384018002}
   - component: {fileID: 1384018003}
   - component: {fileID: 1384018004}
+  - component: {fileID: 1384018005}
+  - component: {fileID: 1384018006}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: FlowChart
@@ -860,7 +861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 36.941654, y: 214.3535}
+  scrollPos: {x: 222.46812, y: 381.45908}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 563
@@ -1693,7 +1694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 73.62253
+    x: 69.67516
     y: -14.3098755
     width: 110.5263
     height: 40
@@ -1702,9 +1703,10 @@ MonoBehaviour:
   itemId: 45
   blockName: LoadSaves
   description: 
-  eventHandler: {fileID: 1384018002}
+  eventHandler: {fileID: 1384018006}
   commandList:
   - {fileID: 1384017999}
+  - {fileID: 1384018005}
   - {fileID: 1384018001}
   suppressAllAutoSelections: 0
 --- !u!114 &1384018001
@@ -1728,21 +1730,6 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
---- !u!114 &1384018002
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384017921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1384018000}
-  suppressBlockAutoSelect: 0
-  waitForFrames: 1
 --- !u!114 &1384018003
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1773,6 +1760,38 @@ MonoBehaviour:
   scope: 1
   key: isLoaded
   value: 0
+--- !u!114 &1384018005
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384017921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 87
+  indentLevel: 0
+  targetObject: {fileID: 1392395943}
+  methodName: SavePlayerNow
+  delay: 0
+--- !u!114 &1384018006
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384017921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1384018000}
+  suppressBlockAutoSelect: 0
+  waitForFrames: 1
 --- !u!1001 &1392395942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1830,6 +1849,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+--- !u!1 &1392395943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7154827101613729453, guid: c92d48231a1dc8b46b1cdb1e0f74372f, type: 3}
+  m_PrefabInstance: {fileID: 1392395942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1405294291
 GameObject:
   m_ObjectHideFlags: 1

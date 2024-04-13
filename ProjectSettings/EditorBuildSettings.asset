@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sources/Scenes/3Episode/ThirdStartLocation.unity
     guid: 226b1e4bcf3c63b4091a2423a78b52ad
+  - enabled: 1
+    path: Assets/Sources/Scenes/3Episode/SortingFallingGarbage.unity
+    guid: 8e87a64b4a20c8b4d9255b3a81d6b860
   m_configObjects: {}

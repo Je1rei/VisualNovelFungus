@@ -1,13 +1,13 @@
 ﻿using Fungus;
-using System.Collections.Generic;
 using System.IO;
-using System.Numerics;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class JSONSaver : MonoBehaviour
 {
+    private const string _mainMenuScene = "Main Menu";
+    private const string _startLocationScene = "StartLocation";
+
     private const string _flowChartTag = "FlowChart";
     private const string _playerDataFileName = "playerData";
     private const string _playerStatsFileName = "playerStats";
@@ -47,7 +47,7 @@ public class JSONSaver : MonoBehaviour
 
         Debug.Log(playerName);
 
-        _currentPlayer = new PlayerData(_nextID, playerName);
+        _currentPlayer = new PlayerData(_nextID, playerName, _startLocationScene);
         _currentPlayerStats = _currentPlayer.GetStats();
 
         _nextID++;
@@ -58,7 +58,7 @@ public class JSONSaver : MonoBehaviour
         DirectoryInfo directory = new DirectoryInfo(Application.persistentDataPath);
         FileInfo[] files = directory.GetFiles($"*.json");
 
-        foreach(FileInfo file in files)
+        foreach (FileInfo file in files)
         {
             file.Delete();
         }
@@ -73,12 +73,13 @@ public class JSONSaver : MonoBehaviour
 
         SavePlayer(_currentPlayer);
         SavePlayerStats(_currentPlayer);
-
-        Debug.Log("12F31");
     }
 
     public void SavePlayer(PlayerData playerData)
     {
+        if (SceneManager.GetActiveScene().name != _mainMenuScene)
+            playerData.SetCurrentScene(SceneManager.GetActiveScene().name);
+
         string jsonDataStats = JsonUtility.ToJson(playerData);
 
         string playerFilePath = Path.Combine(Application.persistentDataPath, $"{_playerDataFileName}_{playerData.ID}.json");
@@ -97,6 +98,14 @@ public class JSONSaver : MonoBehaviour
         string name = _currentPlayer.Name;
 
         _flowchart.SetStringVariable(value, name);
+    }
+
+    public void LoadScene()
+    {
+        if (_currentPlayer.CurrentSceneName != null)
+            SceneManager.LoadScene(_currentPlayer.CurrentSceneName);
+
+        Debug.Log("Loaded - " + _currentPlayer.CurrentSceneName);
     }
 
     public void Load()
@@ -144,7 +153,6 @@ public class JSONSaver : MonoBehaviour
 
     private void SavePlayerStats(PlayerData playerData)
     {
-
         _currentPlayerStats.SetClosedGames(_container.ClosedGames);
         _currentPlayerStats.SetCountCollected(_container.CountCollected);
 
