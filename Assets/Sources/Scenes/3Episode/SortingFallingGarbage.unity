@@ -2116,6 +2116,7 @@ GameObject:
   - component: {fileID: 1384018162}
   - component: {fileID: 1384018163}
   - component: {fileID: 1384018164}
+  - component: {fileID: 1384018165}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: FlowChart
@@ -2147,8 +2148,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1384018052}
+  selectedCommands:
+  - {fileID: 1384018165}
   variables:
   - {fileID: 1384018118}
   - {fileID: 1384018015}
@@ -2816,6 +2819,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1384018165}
   - {fileID: 1384018051}
   - {fileID: 1384018164}
   - {fileID: 1384018055}
@@ -5114,6 +5118,23 @@ MonoBehaviour:
     stringVal: '{$totalCollected}'
   description: 
   _textObjectObsolete: {fileID: 0}
+--- !u!114 &1384018165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384017921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 216
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: 07ae66b691a7c4097b8b74cdcc617b22, type: 3}
+  volume: 1
+  waitUntilFinished: 0
 --- !u!1 &1405294291
 GameObject:
   m_ObjectHideFlags: 1

@@ -12,8 +12,11 @@ public class JSONSaver : MonoBehaviour
     private const string _playerDataFileName = "playerData";
     private const string _playerStatsFileName = "playerStats";
 
+    private const string _totalCollected = "totalCollectedGame";
+    private const string _closedGames = "closedGames";
     private const string _playerNameVar = "playerName";
     private const string _isLoadedVar = "isLoaded";
+    private const string _lastClosedEpisodeVar = "lastClosedEpisode";
 
     private Flowchart _flowchart;
 
@@ -45,8 +48,6 @@ public class JSONSaver : MonoBehaviour
 
         string playerName = _flowchart.GetStringVariable(_playerNameVar);
 
-        Debug.Log(playerName);
-
         _currentPlayer = new PlayerData(_nextID, playerName, _startLocationScene);
         _currentPlayerStats = _currentPlayer.GetStats();
 
@@ -62,6 +63,12 @@ public class JSONSaver : MonoBehaviour
         {
             file.Delete();
         }
+
+        _currentPlayer = null;
+        _currentPlayerStats = null;
+
+        SaveInt(_totalCollected, 0);
+        SaveInt(_closedGames, 0);
     }
 
     public void SavePlayerNow()
@@ -93,19 +100,24 @@ public class JSONSaver : MonoBehaviour
         _flowchart.SetBooleanVariable(value, boolValue);
     }
 
-    public void SaveString(string value)
+    public void SaveInt(string key, int value)
     {
-        string name = _currentPlayer.Name;
+        int valueSave = value;
 
-        _flowchart.SetStringVariable(value, name);
+        _flowchart.SetIntegerVariable(key, valueSave);
+    }
+
+    public void SaveString(string key, string value)
+    {
+        string valueSave = value;
+
+        _flowchart.SetStringVariable(key, valueSave);
     }
 
     public void LoadScene()
     {
         if (_currentPlayer.CurrentSceneName != null)
             SceneManager.LoadScene(_currentPlayer.CurrentSceneName);
-
-        Debug.Log("Loaded - " + _currentPlayer.CurrentSceneName);
     }
 
     public void Load()
@@ -125,7 +137,12 @@ public class JSONSaver : MonoBehaviour
             Debug.Log("Данные загружены из файла: " + playerFilePath);
 
             SaveBool(_isLoadedVar, true);
-            SaveString(_playerNameVar);
+
+            SaveString(_playerNameVar, _currentPlayer.Name);
+            SaveString(_lastClosedEpisodeVar, _currentPlayer.CurrentSceneName);
+
+            SaveInt(_totalCollected, _currentPlayerStats.CountCollected);
+            SaveInt(_closedGames, _currentPlayerStats.ClosedGames);
         }
         else
         {

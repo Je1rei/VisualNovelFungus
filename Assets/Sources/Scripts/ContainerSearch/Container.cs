@@ -31,11 +31,8 @@ public class Container : MonoBehaviour
 
         if (_flowchart.GetBooleanVariable(_varIsClosed))
         {
-            Debug.Log("++");
             ClosedGames++;
         }
-
-        Debug.Log("Set" + CountCollected + ClosedGames);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
