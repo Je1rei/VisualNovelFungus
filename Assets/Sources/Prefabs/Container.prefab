@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853b9ed8d0af4e7438219d5cdbf9519d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flowchart: {fileID: 0}
 --- !u!114 &5653039419964381691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,4 +57,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d422ff1d8149cb4e9f4f3f8c71a7f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flowchart: {fileID: 0}

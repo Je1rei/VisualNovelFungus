@@ -8,12 +8,14 @@ public class Container : MonoBehaviour
     private const string _flowChartTag = "FlowChart";
 
     private const string _varIsClosed = "isClosed";
+    private const string _varTestIsClosed = "completedTest";
     private const string _varTotalCollected = "totalCollected";
 
     private Flowchart _flowchart;
 
     public int CountCollected { get; private set; }
     public int ClosedGames { get; private set; }
+    public int ClosedTests { get; private set; }
 
     private void OnEnable()
     {
@@ -32,6 +34,11 @@ public class Container : MonoBehaviour
         if (_flowchart.GetBooleanVariable(_varIsClosed))
         {
             ClosedGames++;
+        }
+        
+        if (_flowchart.GetBooleanVariable(_varTestIsClosed))
+        {
+            ClosedTests++;
         }
     }
 
