@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sources/Scenes/4Episode/FourthStartLocation.unity
     guid: 31c3db6d1ff9fb147af9eda9ef6e5012
+  - enabled: 1
+    path: Assets/Sources/Scenes/4Episode/FirstTest.unity
+    guid: cf1f11d785bb1f24aafa0de072bcb1a1
+  - enabled: 1
+    path: Assets/Sources/Scenes/Tests/Bases BioEcological.unity
+    guid: ee8bc1c8eb549944bbbe21df0b55882d
   m_configObjects: {}
