@@ -33,6 +33,15 @@ EditorBuildSettings:
     path: Assets/Sources/Scenes/4Episode/FirstTest.unity
     guid: cf1f11d785bb1f24aafa0de072bcb1a1
   - enabled: 1
-    path: Assets/Sources/Scenes/Tests/Bases BioEcological.unity
+    path: Assets/Sources/Scenes/Tests/Planet Earth.unity
     guid: ee8bc1c8eb549944bbbe21df0b55882d
+  - enabled: 1
+    path: Assets/Sources/Scenes/Tests/RulesInForest.unity
+    guid: ffd09c919bd40a74495cf4b49bbffc01
+  - enabled: 1
+    path: Assets/Sources/Scenes/Tests/Ecologia.unity
+    guid: bc8acfe059e01c84c95862b0b9da159b
+  - enabled: 1
+    path: Assets/Sources/Scenes/Other Mini Games/Waste Drain.unity
+    guid: 3116da10e3a4d1d48b558e712388977a
   m_configObjects: {}

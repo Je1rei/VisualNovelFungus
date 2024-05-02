@@ -15,6 +15,7 @@ public class JSONSaver : MonoBehaviour
     private const string _totalCollected = "totalCollectedGame";
     private const string _closedGames = "closedGames";
     private const string _closedTests = "closedTests";
+    private const string _coinCollected = "coinCollected";
     private const string _playerNameVar = "playerName";
     private const string _isLoadedVar = "isLoaded";
     private const string _lastClosedEpisodeVar = "lastClosedEpisode";
@@ -145,6 +146,7 @@ public class JSONSaver : MonoBehaviour
             SaveInt(_totalCollected, _currentPlayerStats.CountCollected);
             SaveInt(_closedGames, _currentPlayerStats.ClosedGames);
             SaveInt(_closedTests, _currentPlayerStats.ClosedTests);
+            SaveInt(_coinCollected, _currentPlayerStats.CoinCollected);
         }
         else
         {
@@ -175,6 +177,7 @@ public class JSONSaver : MonoBehaviour
         _currentPlayerStats.SetClosedGames(_container.ClosedGames);
         _currentPlayerStats.SetCountCollected(_container.CountCollected);
         _currentPlayerStats.SetCountClosedTests(_container.ClosedTests);
+        _currentPlayerStats.SetCoinCollected(_container.CoinCollected);
 
         string jsonDataStats = JsonUtility.ToJson(_currentPlayerStats);
         string playerStatsFilePath = Path.Combine(Application.persistentDataPath, $"{_playerStatsFileName}_{playerData.ID}.json");

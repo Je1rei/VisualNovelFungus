@@ -30,7 +30,6 @@ public partial class QuizContainer : MonoBehaviour
 
         SetUnusedQuestions();
         ShuffleQuestions();
-        SetVariablesFlowchart();
     }
 
     public void SetQuestionCount()
