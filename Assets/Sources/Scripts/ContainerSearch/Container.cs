@@ -1,4 +1,5 @@
 ﻿using Fungus;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,13 +16,14 @@ public class Container : MonoBehaviour
     private const string _varPrize = "prize";
 
     private Flowchart _flowchart;
-    private int _priceStars;
     private int _prize;
 
     public int CountCollected { get; private set; }
     public int ClosedGames { get; private set; }
     public int ClosedTests { get; private set; }
     public int CoinCollected {  get; private set; }
+    public int PriceStars => _flowchart.GetIntegerVariable(_varPrice);
+
 
     private void OnEnable()
     {
@@ -52,8 +54,9 @@ public class Container : MonoBehaviour
 
     public void DecreaseCoinCollected()
     {
-        _priceStars = _flowchart.GetIntegerVariable(_varPrice);
-        CoinCollected -= _priceStars;
+        CoinCollected -= PriceStars;
+
+        Debug.Log($"DECREASE {CoinCollected} -= {PriceStars} ()");
     }
 
     public void IncreaseCoinCollected()
@@ -61,6 +64,8 @@ public class Container : MonoBehaviour
         _prize = _flowchart.GetIntegerVariable(_varPrize);
         CoinCollected += _prize;
     }
+
+    public void ClearCoinCollected() => CoinCollected = 0;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {

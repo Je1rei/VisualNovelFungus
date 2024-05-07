@@ -1,4 +1,5 @@
 ﻿using Fungus;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,19 @@ public class JSONSaver : MonoBehaviour
     private const string _playerNameVar = "playerName";
     private const string _isLoadedVar = "isLoaded";
     private const string _lastClosedEpisodeVar = "lastClosedEpisode";
+    private const string _purchasedVar = "purchasedVar";
+
+    private const string _firstMiniGame = "isPurchased_MG_1";
+    private const string _secondMiniGame = "isPurchased_MG_2";
+    private const string _thirdMiniGame = "isPurchased_MG_3";
+    private const string _fourthMiniGame = "isPurchased_MG_4";
+    private const string _fifthMiniGame = "isPurchased_MG_5";
+
+    private const string _firstTest = "isPurchased_Test_1";
+    private const string _secondTest = "isPurchased_Test_2";
+    private const string _thirdTest = "isPurchased_Test_3";
+
+    private string _purchasedVariable = "";
 
     private Flowchart _flowchart;
 
@@ -135,6 +149,7 @@ public class JSONSaver : MonoBehaviour
             _currentPlayer = JsonUtility.FromJson<PlayerData>(jsonDataPlayer);
 
             LoadPlayerStats(_currentPlayer);
+            LoadPlayerIsPurchased();
 
             Debug.Log("Данные загружены из файла: " + playerFilePath);
 
@@ -147,6 +162,7 @@ public class JSONSaver : MonoBehaviour
             SaveInt(_closedGames, _currentPlayerStats.ClosedGames);
             SaveInt(_closedTests, _currentPlayerStats.ClosedTests);
             SaveInt(_coinCollected, _currentPlayerStats.CoinCollected);
+
         }
         else
         {
@@ -170,6 +186,12 @@ public class JSONSaver : MonoBehaviour
                 _nextID = id + 1;
             }
         }
+    }
+
+    public void SavePurchased()
+    {
+        string level = _flowchart.GetStringVariable(_purchasedVar);
+        _currentPlayer.AddPurchase(level);
     }
 
     private void SavePlayerStats(PlayerData playerData)
@@ -202,6 +224,25 @@ public class JSONSaver : MonoBehaviour
 
             _currentPlayerStats = new PlayerStatsData();
         }
+    }
+
+    private void LoadPlayerIsPurchased()
+    {
+        if (_currentPlayer != null && _flowchart != null)
+        {
+            foreach (string purchasedLevel in _currentPlayer.LevelsPurchased)
+            {
+                if (CheckIfVariableExists(purchasedLevel) && CheckIfVariableExists($"{purchasedLevel}"))
+                {
+                    _flowchart.SetBooleanVariable($"{purchasedLevel}", true);
+                }
+            }
+        }
+    }
+
+    private bool CheckIfVariableExists(string variableName)
+    {
+        return _flowchart.HasVariable(variableName);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sources/Scenes/Other Mini Games/Waste Drain.unity
     guid: 3116da10e3a4d1d48b558e712388977a
+  - enabled: 1
+    path: Assets/Sources/Scenes/Other Mini Games/Mini Cleaners.unity
+    guid: 3a46efe01453aad4a9d4695212494179
   m_configObjects: {}
