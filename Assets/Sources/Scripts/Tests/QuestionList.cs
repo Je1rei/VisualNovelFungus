@@ -54,5 +54,10 @@ public class QuestionList : ScriptableObject
             question.SetUsed(false);
         }
     }
+
+    public string ToJson()
+    {
+        return JsonUtility.ToJson(this);
+    }
 }
 
