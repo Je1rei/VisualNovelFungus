@@ -6,32 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class JSONSaver : MonoBehaviour
 {
-    private const string _mainMenuScene = "Main Menu";
-    private const string _startLocationScene = "StartLocation";
-
-    private const string _flowChartTag = "FlowChart";
-    private const string _playerDataFileName = "playerData";
-    private const string _playerStatsFileName = "playerStats";
-
-    private const string _totalCollected = "totalCollectedGame";
-    private const string _closedGames = "closedGames";
-    private const string _closedTests = "closedTests";
-    private const string _coinCollected = "coinCollected";
-    private const string _playerNameVar = "playerName";
-    private const string _isLoadedVar = "isLoaded";
-    private const string _lastClosedEpisodeVar = "lastClosedEpisode";
-    private const string _purchasedVar = "purchasedVar";
-
-    private const string _firstMiniGame = "isPurchased_MG_1";
-    private const string _secondMiniGame = "isPurchased_MG_2";
-    private const string _thirdMiniGame = "isPurchased_MG_3";
-    private const string _fourthMiniGame = "isPurchased_MG_4";
-    private const string _fifthMiniGame = "isPurchased_MG_5";
-
-    private const string _firstTest = "isPurchased_Test_1";
-    private const string _secondTest = "isPurchased_Test_2";
-    private const string _thirdTest = "isPurchased_Test_3";
-
     private string _purchasedVariable = "";
 
     private Flowchart _flowchart;
@@ -50,7 +24,7 @@ public class JSONSaver : MonoBehaviour
 
     private void Awake()
     {
-        _filePath = Path.Combine(Application.persistentDataPath, _playerDataFileName);
+        _filePath = Path.Combine(Application.persistentDataPath, ConstantsSavers._playerDataFileName);
     }
 
     private void OnDisable()
@@ -62,9 +36,9 @@ public class JSONSaver : MonoBehaviour
     {
         FindMaxID();
 
-        string playerName = _flowchart.GetStringVariable(_playerNameVar);
+        string playerName = _flowchart.GetStringVariable(ConstantsSavers._playerNameVar);
 
-        _currentPlayer = new PlayerData(_nextID, playerName, _startLocationScene);
+        _currentPlayer = new PlayerData(_nextID, playerName, ConstantsSavers._startLocationScene);
         _currentPlayerStats = _currentPlayer.GetStats();
 
         _nextID++;
@@ -83,8 +57,8 @@ public class JSONSaver : MonoBehaviour
         _currentPlayer = null;
         _currentPlayerStats = null;
 
-        SaveInt(_totalCollected, 0);
-        SaveInt(_closedGames, 0);
+        SaveInt(ConstantsSavers._totalCollected, 0);
+        SaveInt(ConstantsSavers._closedGames, 0);
     }
 
     public void SavePlayerNow()
@@ -100,12 +74,12 @@ public class JSONSaver : MonoBehaviour
 
     public void SavePlayer(PlayerData playerData)
     {
-        if (SceneManager.GetActiveScene().name != _mainMenuScene)
+        if (SceneManager.GetActiveScene().name != ConstantsSavers._mainMenuScene)
             playerData.SetCurrentScene(SceneManager.GetActiveScene().name);
 
         string jsonDataStats = JsonUtility.ToJson(playerData);
 
-        string playerFilePath = Path.Combine(Application.persistentDataPath, $"{_playerDataFileName}_{playerData.ID}.json");
+        string playerFilePath = Path.Combine(Application.persistentDataPath, $"{ConstantsSavers._playerDataFileName}_{playerData.ID}.json");
         File.WriteAllText(playerFilePath, jsonDataStats);
 
         Debug.Log("Данные игрока сохранены в файл: " + playerFilePath);
@@ -140,7 +114,7 @@ public class JSONSaver : MonoBehaviour
     {
         FindMaxID();
 
-        string playerFilePath = Path.Combine(Application.persistentDataPath, $"{_playerDataFileName}_{_nextID - 1}.json");
+        string playerFilePath = Path.Combine(Application.persistentDataPath, $"{ConstantsSavers._playerDataFileName}_{_nextID - 1}.json");
 
         if (File.Exists(playerFilePath))
         {
@@ -153,28 +127,28 @@ public class JSONSaver : MonoBehaviour
 
             Debug.Log("Данные загружены из файла: " + playerFilePath);
 
-            SaveBool(_isLoadedVar, true);
+            SaveBool(ConstantsSavers._isLoadedVar, true);
 
-            SaveString(_playerNameVar, _currentPlayer.Name);
-            SaveString(_lastClosedEpisodeVar, _currentPlayer.CurrentSceneName);
+            SaveString(ConstantsSavers._playerNameVar, _currentPlayer.Name);
+            SaveString(ConstantsSavers._lastClosedEpisodeVar, _currentPlayer.CurrentSceneName);
 
-            SaveInt(_totalCollected, _currentPlayerStats.CountCollected);
-            SaveInt(_closedGames, _currentPlayerStats.ClosedGames);
-            SaveInt(_closedTests, _currentPlayerStats.ClosedTests);
-            SaveInt(_coinCollected, _currentPlayerStats.CoinCollected);
+            SaveInt(ConstantsSavers._totalCollected, _currentPlayerStats.CountCollected);
+            SaveInt(ConstantsSavers._closedGames, _currentPlayerStats.ClosedGames);
+            SaveInt(ConstantsSavers._closedTests, _currentPlayerStats.ClosedTests);
+            SaveInt(ConstantsSavers._coinCollected, _currentPlayerStats.CoinCollected);
 
         }
         else
         {
             Debug.LogWarning("Файл даты игрока не найден: " + playerFilePath);
-            SaveBool(_isLoadedVar, false);
+            SaveBool(ConstantsSavers._isLoadedVar, false);
         }
     }
 
     private void FindMaxID()
     {
         DirectoryInfo directory = new DirectoryInfo(Application.persistentDataPath);
-        FileInfo[] files = directory.GetFiles($"{_playerDataFileName}_*.json");
+        FileInfo[] files = directory.GetFiles($"{ConstantsSavers._playerDataFileName}_*.json");
 
         foreach (FileInfo file in files)
         {
@@ -190,7 +164,7 @@ public class JSONSaver : MonoBehaviour
 
     public void SavePurchased()
     {
-        string level = _flowchart.GetStringVariable(_purchasedVar);
+        string level = _flowchart.GetStringVariable(ConstantsSavers._purchasedVar);
         _currentPlayer.AddPurchase(level);
     }
 
@@ -202,7 +176,7 @@ public class JSONSaver : MonoBehaviour
         _currentPlayerStats.SetCoinCollected(_container.CoinCollected);
 
         string jsonDataStats = JsonUtility.ToJson(_currentPlayerStats);
-        string playerStatsFilePath = Path.Combine(Application.persistentDataPath, $"{_playerStatsFileName}_{playerData.ID}.json");
+        string playerStatsFilePath = Path.Combine(Application.persistentDataPath, $"{ConstantsSavers._playerStatsFileName}_{playerData.ID}.json");
 
         File.WriteAllText(playerStatsFilePath, jsonDataStats);
 
@@ -211,7 +185,7 @@ public class JSONSaver : MonoBehaviour
 
     private void LoadPlayerStats(PlayerData playerData)
     {
-        string playerStatsFilePath = Path.Combine(Application.persistentDataPath, $"{_playerStatsFileName}_{playerData.ID}.json");
+        string playerStatsFilePath = Path.Combine(Application.persistentDataPath, $"{ConstantsSavers._playerStatsFileName}_{playerData.ID}.json");
 
         if (File.Exists(playerStatsFilePath))
         {
@@ -248,8 +222,45 @@ public class JSONSaver : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         _container = FindObjectOfType<Container>();
-        _flowchart = GameObject.FindWithTag(_flowChartTag)?.GetComponent<Flowchart>();
+        _flowchart = GameObject.FindWithTag(ConstantsSavers._flowChartTag)?.GetComponent<Flowchart>();
 
         Load();
+    }
+}
+
+public static class ConstantsSavers
+{
+    public const string _mainMenuScene = "Main Menu";
+    public const string _startLocationScene = "StartLocation";
+
+    public const string _flowChartTag = "FlowChart";
+    public const string _playerDataFileName = "playerData";
+    public const string _playerStatsFileName = "playerStats";
+
+    public const string _totalCollected = "totalCollectedGame";
+    public const string _closedGames = "closedGames";
+    public const string _closedTests = "closedTests";
+    public const string _coinCollected = "coinCollected";
+    public const string _playerNameVar = "playerName";
+    public const string _isLoadedVar = "isLoaded";
+    public const string _lastClosedEpisodeVar = "lastClosedEpisode";
+    public const string _purchasedVar = "purchasedVar";
+
+    public const string _firstMiniGame = "isPurchased_MG_1";
+    public const string _secondMiniGame = "isPurchased_MG_2";
+    public const string _thirdMiniGame = "isPurchased_MG_3";
+    public const string _fourthMiniGame = "isPurchased_MG_4";
+    public const string _fifthMiniGame = "isPurchased_MG_5";
+
+    public const string _firstTest = "isPurchased_Test_1";
+    public const string _secondTest = "isPurchased_Test_2";
+    public const string _thirdTest = "isPurchased_Test_3";
+
+    public static JSONSaver JSONSaver
+    {
+        get => default;
+        set
+        {
+        }
     }
 }

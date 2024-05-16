@@ -28,31 +28,6 @@ public class ObjectPool<T> where T : MonoBehaviour
         CreatePool();
     }
 
-    private void CreatePool()
-    {
-        _pool = new List<T>();
-
-        foreach (T item in Prefabs)
-        {
-            CreateObject(item);
-        }
-    }
-
-    private void ShufflePool()
-    {
-        int number = _pool.Count;
-
-        while (number > 1)
-        {
-            number--;
-            int index = Random.Range(0, number + 1);
-            T value = _pool[index];
-
-            _pool[index] = _pool[number];
-            _pool[number] = value;
-        }
-    }
-
     private T CreateObject(T obj, bool isActiveByDefault = false)
     {
         obj.gameObject.SetActive(isActiveByDefault);
@@ -86,5 +61,30 @@ public class ObjectPool<T> where T : MonoBehaviour
             return element;
 
         throw new System.Exception($"There is no free elements in pool of type {typeof(T)}");
+    }
+
+    private void CreatePool()
+    {
+        _pool = new List<T>();
+
+        foreach (T item in Prefabs)
+        {
+            CreateObject(item);
+        }
+    }
+
+    private void ShufflePool()
+    {
+        int number = _pool.Count;
+
+        while (number > 1)
+        {
+            number--;
+            int index = Random.Range(0, number + 1);
+            T value = _pool[index];
+
+            _pool[index] = _pool[number];
+            _pool[number] = value;
+        }
     }
 }

@@ -713,6 +713,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ea9176d51839047859e7178c50a0d0, type: 3}
+--- !u!114 &295335635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5236383552826542504, guid: f94ac4c9f52815d418a470a90a5a2381, type: 3}
+  m_PrefabInstance: {fileID: 202787134}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8371d2b2fe14a9ca0a9465140027de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &324569972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,6 +2484,7 @@ GameObject:
   - component: {fileID: 1384018331}
   - component: {fileID: 1384018332}
   - component: {fileID: 1384018333}
+  - component: {fileID: 1384018334}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: FlowChart
@@ -2493,7 +2505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 342.66373, y: 777.9836}
+  scrollPos: {x: 414.615, y: 793.83716}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 588
@@ -2504,16 +2516,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1384018300}
-  selectedCommands:
-  - {fileID: 1384018328}
-  - {fileID: 1384018321}
-  - {fileID: 1384018332}
-  - {fileID: 1384018327}
-  - {fileID: 1384018330}
-  - {fileID: 1384018331}
-  - {fileID: 1384018333}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 1384018271}
   - {fileID: 1384018110}
@@ -2572,6 +2576,7 @@ MonoBehaviour:
   - {fileID: 1384018054}
   - {fileID: 1384017991}
   - {fileID: 1384018247}
+  - {fileID: 1384018334}
   - {fileID: 1384018246}
   - {fileID: 1384018306}
   - {fileID: 1384018238}
@@ -4566,7 +4571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 93.89691
+    x: 92.6774
     y: -482.39676
     width: 132.92682
     height: 40
@@ -7107,7 +7112,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 46.7834
-    y: -654.86926
+    y: -657.3082
     width: 95.12194
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -7464,7 +7469,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1384018332
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7616,7 +7621,7 @@ MonoBehaviour:
     vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &1384018333
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7628,6 +7633,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 349
   indentLevel: 0
+--- !u!114 &1384018334
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384017921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b097b9790a8a1456a86bc4d322b487db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 350
+  indentLevel: 0
+  menuDialog: {fileID: 295335635}
 --- !u!4 &1403215380 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2219557425500152886, guid: 25ec4498755f6f346965cd8173f9a25a, type: 3}

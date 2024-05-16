@@ -14,6 +14,14 @@ public class QuestionList : ScriptableObject
     public List<QuestionData> Questions => _questions;
     public string Name => _nameTest;
 
+    public QuestionData QuestionData
+    {
+        get => default;
+        set
+        {
+        }
+    }
+
     [Button(ButtonSizes.Large)]
     [ButtonGroup("TopButtons", -9)]
     private void AddNewQuestion()

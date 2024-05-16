@@ -48,6 +48,14 @@ namespace Fungus
 
         protected Writer writer;
 
+        public ClickMode ClickMode
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         protected virtual void Awake()
         {
             writer = GetComponent<Writer>();

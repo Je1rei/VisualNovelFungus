@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Container">
+    <Position X="6.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACCBAAQQACAAABAEAAAAEAAAQIBAABAAAACAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\ContainerSearch\Container.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConstantsContainer">
+    <Position X="6.5" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAQAAAACAAQAAAAAAAAgkAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\ContainerSearch\ConstantsContainer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Container" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ObjectPool&lt;T&gt;">
+    <Position X="8.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQCBAAAAAAAAAAAAARAAAABIoAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Sources\Scripts\ObjectPool\ObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectPoolBucket">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABCCAgAAAAABAAQAAAAAgAIiABAAEAACAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\ObjectPool\ObjectPoolBucket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bucket">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAQAAABIAAAAAAAACAQ=</HashCode>
+      <FileName>Assets\Sources\Scripts\ObjectPool\Bucket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spawner&lt;T&gt;">
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCAAAAACAAFACAAAAAAAEAQIAwAQEAABAEI=</HashCode>
+      <FileName>Assets\Sources\Scripts\Spawners\Spawner.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SpawnPoint" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SpawnerGarbage" Collapsed="true">
+    <Position X="10.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Spawners\SpawnerGarbage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundGarbage" Collapsed="true">
+    <Position X="12.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\TapItems\SoundGarbage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundItems&lt;T&gt;">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAgAABAAAAAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\TapItems\SoundItems.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TapGarbage" Collapsed="true">
+    <Position X="14.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\TapItems\TapGarbage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TapItem&lt;T&gt;">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAECgAAAAAAAAAAACAAABAAoCAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\TapItems\TapItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="QuestionData">
+    <Position X="18.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAABBCAAAAAAAAAAAAIAEQAAAAIBAAEA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Tests\QuestionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuestionList">
+    <Position X="15.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABBAAACAAQACAAIAAAUJAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Tests\QuestionList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="QuestionData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="QuizContainer">
+    <Position X="2.75" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAiAAQAAJAAECgAAgCAAQAAFAAAAAQQAAGEA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Tests\QuizContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BinGlass" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Trashes\BinGlass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BinPaper" Collapsed="true">
+    <Position X="1" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Trashes\BinPaper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BinPlastic" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Trashes\BinPlastic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Glass" Collapsed="true">
+    <Position X="16" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Trashes\Glass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paper" Collapsed="true">
+    <Position X="16" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Trashes\Paper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Plastic" Collapsed="true">
+    <Position X="16" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Trashes\Plastic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrashBin&lt;T&gt;">
+    <Position X="0.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAUAAAAAAAAAAAAAEAAAIAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Trashes\TrashBin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Garbage">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Trashes\Garbage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.ScriptableObject" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SpawnPoint" Collapsed="true">
+    <Position X="10.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Spawners\SpawnPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerData">
+    <Position X="2.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIBAAAAAgggAAAABBCAQgAAAAAAAAAAAAgAABEAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Saves\PlayerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerStatsData">
+    <Position X="0.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgIAAACCAAAEYAAEAAhAAAAAAAAAAAAAIAAAAAIAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Saves\PlayerStatsData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuizSaver">
+    <Position X="18" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQCAAAAAAAAAAAAAAAAAAEAAAAg=</HashCode>
+      <FileName>Assets\Sources\Scripts\Saves\QuizSaver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JSONSaver">
+    <Position X="4.25" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAwQEAAQAAaAACAgEGCOQABAAQAACIAAAIAAAACEE=</HashCode>
+      <FileName>Assets\Sources\Scripts\Saves\JSONSaver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConstantsSavers">
+    <Position X="6.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACgAAAAIAMCEwAAAAAAgAAEgIwAIIAAAAIICAAABAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Saves\JSONSaver.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="JSONSaver" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

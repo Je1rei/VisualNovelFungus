@@ -21,6 +21,14 @@ public class Spawner<T> : MonoBehaviour where T : MonoBehaviour
 
     public int SpawnCount => _spawnCount;
 
+    public SpawnPoint SpawnPoint
+    {
+        get => default;
+        set
+        {
+        }
+    }
+
     private void Awake()
     {
         _spawnPoints = new List<SpawnPoint>(_parentPoints.GetComponentsInChildren<SpawnPoint>());

@@ -6,15 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Container : MonoBehaviour
 {
-    private const string _flowChartTag = "FlowChart";
-
-    private const string _varIsClosed = "isClosed";
-    private const string _varTestIsClosed = "completedTest";
-    private const string _varTotalCollected = "totalCollected";
-    private const string _varCoinCollected = "coinCollected";
-    private const string _varPrice = "priceStars";
-    private const string _varPrize = "prize";
-
     private Flowchart _flowchart;
     private int _prize;
 
@@ -22,7 +13,7 @@ public class Container : MonoBehaviour
     public int ClosedGames { get; private set; }
     public int ClosedTests { get; private set; }
     public int CoinCollected {  get; private set; }
-    public int PriceStars => _flowchart.GetIntegerVariable(_varPrice);
+    public int PriceStars => _flowchart.GetIntegerVariable(ConstantsContainer._varPrice);
 
 
     private void OnEnable()
@@ -37,15 +28,15 @@ public class Container : MonoBehaviour
 
     public void SetCollected()
     {
-        CountCollected = _flowchart.GetIntegerVariable(_varTotalCollected);
+        CountCollected = _flowchart.GetIntegerVariable(ConstantsContainer._varTotalCollected);
 
-        if (_flowchart.GetBooleanVariable(_varIsClosed))
+        if (_flowchart.GetBooleanVariable(ConstantsContainer._varIsClosed))
         {
             ClosedGames++;
             CoinCollected++;
         }
         
-        if (_flowchart.GetBooleanVariable(_varTestIsClosed))
+        if (_flowchart.GetBooleanVariable(ConstantsContainer._varTestIsClosed))
         {
             ClosedTests++;
             CoinCollected++;
@@ -61,7 +52,7 @@ public class Container : MonoBehaviour
 
     public void IncreaseCoinCollected()
     {
-        _prize = _flowchart.GetIntegerVariable(_varPrize);
+        _prize = _flowchart.GetIntegerVariable(ConstantsContainer._varPrize);
         CoinCollected += _prize;
     }
 
@@ -69,6 +60,6 @@ public class Container : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        _flowchart = GameObject.FindWithTag(_flowChartTag)?.GetComponent<Flowchart>();
+        _flowchart = GameObject.FindWithTag(ConstantsContainer._flowChartTag)?.GetComponent<Flowchart>();
     }
 }

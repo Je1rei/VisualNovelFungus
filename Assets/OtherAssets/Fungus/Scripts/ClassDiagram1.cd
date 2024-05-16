@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Fungus.Clickable2D">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAgAAAACAAABAAAAEEIggAAAIIAEAAQAAAAI=</HashCode>
+      <FileName>Assets\OtherAssets\Fungus\Scripts\Components\Clickable2D.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Fungus.DialogInput">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAAAAAAAAAAIAIAgAgQAAAAECIABARQAgAAAAAEA=</HashCode>
+      <FileName>Assets\OtherAssets\Fungus\Scripts\Components\DialogInput.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ClickMode" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Fungus.Draggable2D">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAAACAAgAAAUCKgABkMEAEMEEgACQAYAEAAUACAAI=</HashCode>
+      <FileName>Assets\OtherAssets\Fungus\Scripts\Components\Draggable2D.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Fungus.SayDialog">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IKBBAECkACAGzIAAkACAYCiEQSAEAAADowgQAIDoUEQ=</HashCode>
+      <FileName>Assets\OtherAssets\Fungus\Scripts\Components\SayDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fungus.MenuDialog">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAABAAAACQEAAEgAAMAQBAggAIAAAAAEAAJBAGEA=</HashCode>
+      <FileName>Assets\OtherAssets\Fungus\Scripts\Components\MenuDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="Fungus.ClickMode">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAASAAAAAACAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\OtherAssets\Fungus\Scripts\Components\DialogInput.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
