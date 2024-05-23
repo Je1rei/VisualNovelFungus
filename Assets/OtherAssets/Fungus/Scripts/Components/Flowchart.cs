@@ -973,7 +973,7 @@ namespace Fungus
         /// Sets the value of a float variable.
         /// The variable must already be added to the list of variables for this Flowchart.
         /// </summary>
-        public virtual void SetFloatVariable(string key, float value)
+        public virtual void SetIntVariable(string key, float value)
         {
             var variable = GetVariable<FloatVariable>(key);
             if (variable != null)

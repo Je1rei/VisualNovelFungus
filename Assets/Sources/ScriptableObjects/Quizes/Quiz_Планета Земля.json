@@ -1,0 +1,30 @@
+{
+  "Name": "Планета Земля",
+  "NumberOfQuestionsToAdd": 1,
+  "Questions": [
+    {
+      "Question": "Какая звезда освещает нашу планету?",
+      "Options": [ "Луна", "Солнце", "Орион" ],
+      "CorrectOptionIndex": 1,
+      "Used": false
+    },
+    {
+      "Question": "Чего больше на поверхности Земли?",
+      "Options": [ "Воды", "Земли", "Гор" ],
+      "CorrectOptionIndex": 0,
+      "Used": false
+    },
+    {
+      "Question": "На какой планете мы живём?",
+      "Options": [ "Марс", "Луна", "Земля" ],
+      "CorrectOptionIndex": 2,
+      "Used": false
+    },
+    {
+      "Question": "На каком материке мы живём?",
+      "Options": [ "Евразия", "Африка", "Австралия" ],
+      "CorrectOptionIndex": 0,
+      "Used": false
+    }
+  ]
+}

@@ -202,7 +202,7 @@ namespace Fungus
             for (int i = 0; i < flowchartData.FloatVars.Count; i++)
             {
                 var floatVar = flowchartData.FloatVars[i];
-                flowchart.SetFloatVariable(floatVar.Key, floatVar.Value);
+                flowchart.SetIntVariable(floatVar.Key, floatVar.Value);
             }
             for (int i = 0; i < flowchartData.StringVars.Count; i++)
             {

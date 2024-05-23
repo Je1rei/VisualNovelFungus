@@ -12,6 +12,7 @@ public class QuizSaver : MonoBehaviour
     {
         SaveQuizs();
     }
+
     public void SaveQuizs()
     {
         if (_quizes != null)
@@ -23,7 +24,7 @@ public class QuizSaver : MonoBehaviour
         }
     }
 
-    private void SaveQuiz(QuestionList test)
+    public void SaveQuiz(QuestionList test)
     {
         string jsonData = test.ToJson();
         string filePath = Path.Combine(Application.persistentDataPath, _quizDataFolder);
@@ -35,3 +36,4 @@ public class QuizSaver : MonoBehaviour
         File.WriteAllText(fullPath, jsonData);
     }
 }
+

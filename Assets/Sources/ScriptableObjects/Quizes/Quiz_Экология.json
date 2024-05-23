@@ -1,0 +1,36 @@
+{
+  "Name": "Экология",
+  "NumberOfQuestionsToAdd": 1,
+  "Questions": [
+    {
+      "Question": "Как называется обильное опадание листвы осенью?",
+      "Options": [ "Гниение", "Осыпание", "Листопад" ],
+      "CorrectOptionIndex": 2,
+      "Used": false
+    },
+    {
+      "Question": "Укажи, сколько месяцев в году",
+      "Options": [ "18 месяцев", "16 месяцев", "12 месяцев" ],
+      "CorrectOptionIndex": 2,
+      "Used": false
+    },
+    {
+      "Question": "Что не относится к явлениям природы?",
+      "Options": [ "Дождь", "Снег", "Загрязнение воды" ],
+      "CorrectOptionIndex": 2,
+      "Used": false
+    },
+    {
+      "Question": "Закончи предложение.  Насекомые - это животные, у которых ....",
+      "Options": [ "...тело покрыто чешуёй", "...шесть ног", " ...тело покрыто шерстью" ],
+      "CorrectOptionIndex": 1,
+      "Used": false
+    },
+    {
+      "Question": "Укажи предмет, созданный руками человека",
+      "Options": [ "Дерево", "Стол", "Цветок" ],
+      "CorrectOptionIndex": 1,
+      "Used": false
+    }
+  ]
+}

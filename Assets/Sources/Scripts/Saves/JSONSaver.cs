@@ -255,6 +255,8 @@ public static class ConstantsSavers
     public const string _firstTest = "isPurchased_Test_1";
     public const string _secondTest = "isPurchased_Test_2";
     public const string _thirdTest = "isPurchased_Test_3";
+    public const string _fourthTest = "isPurchased_Test_4";
+    public const string _fifthTest = "isPurchased_Test_5";
 
     public static JSONSaver JSONSaver
     {

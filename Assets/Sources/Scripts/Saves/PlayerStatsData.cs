@@ -21,4 +21,9 @@ public class PlayerStatsData
     public void SetCountClosedTests(int value) => _closedTests += value;    
 
     public void SetCoinCollected(int value) => _coinCollected += value;
+
+    public string ToJson()
+    {
+        return JsonUtility.ToJson(this);
+    }
 }

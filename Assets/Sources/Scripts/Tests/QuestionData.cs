@@ -7,29 +7,39 @@ using System.Linq;
 [Serializable]
 public class QuestionData
 {
-    [SerializeField] private string _question;
-    [SerializeField] private List<string> _options;
-    [SerializeField, Range(0, 2)] private int _correctOptionIndex;
-    [SerializeField] private bool _used;
+    [SerializeField] public string Question;
+    [SerializeField] public List<string> Options;
+    [SerializeField, Range(0, 2)] public int CorrectOptionIndex;
+    [SerializeField] public bool Used;
 
-    public string Question => _question;
-    public List<string> Options => _options;
-
-    public int CorrectOptionIndex => _correctOptionIndex;
-    public bool Used => _used;
 
     public QuestionData()
     {
-        _options = new List<string>();
+        Options = new List<string>();
     }
 
-    public void SetUsed(bool value) => _used = value;
+    public void SetUsed(bool value) => Used = value;
+
+    public void SetQuestion(string question)
+    {
+        Question = question;
+    }
+
+    public void SetOptions(List<string> options)
+    {
+        Options = options;
+    }
+
+    public void SetCorrectOptionIndex(int index)
+    {
+        CorrectOptionIndex = index;
+    }
 
     public void AddOptions(int value)
     {
         for (int i = 0; i < value; i++)
         {
-            _options.Add("");
+            Options.Add("");
         }
     }
 }
