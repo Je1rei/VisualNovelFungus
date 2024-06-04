@@ -4,7 +4,6 @@ using UnityEngine;
 using System.IO;
 using Fungus;
 using UnityEngine.UI;
-using System;
 using System.Linq;
 
 public class QuizLoader : MonoBehaviour
@@ -26,6 +25,8 @@ public class QuizLoader : MonoBehaviour
     [SerializeField] private Button _removeFromActiveQuizzesButton;
     [SerializeField] private Button _clearActiveQuizzesButton;
 
+    [SerializeField] private List<string> _excludedQuizzes;  // List to hold excluded quiz names
+
     private List<QuestionList> _quizList = new List<QuestionList>();
     private List<QuestionList> _activeQuizzes = new List<QuestionList>();
 
@@ -40,7 +41,6 @@ public class QuizLoader : MonoBehaviour
         _quizDirectoryPath = Path.Combine(Application.persistentDataPath, _quizDataFolder);
         _activeQuizDirectoryPath = Path.Combine(Application.persistentDataPath, _activeQuizDataFolder);
 
-        // Создать папку для активных тестов, если она не существует
         if (!Directory.Exists(_activeQuizDirectoryPath))
         {
             Directory.CreateDirectory(_activeQuizDirectoryPath);
@@ -92,29 +92,24 @@ public class QuizLoader : MonoBehaviour
         foreach (string filePath in quizFiles)
         {
             string json = File.ReadAllText(filePath);
-            QuestionList quiz = ScriptableObject.CreateInstance<QuestionList>(); // Создаем экземпляр QuestionList
-            JsonUtility.FromJsonOverwrite(json, quiz); // Заполняем его данными из JSON
+            QuestionList quiz = ScriptableObject.CreateInstance<QuestionList>();
+            JsonUtility.FromJsonOverwrite(json, quiz);
 
-            // Проверяем, существует ли уже тест с таким названием
-            if (!_quizList.Exists(q => q.Name == quiz.Name))
+            if (!_quizList.Exists(q => q.Name == quiz.Name) && !_excludedQuizzes.Contains(quiz.Name))
             {
                 _quizList.Add(quiz);
             }
         }
 
-        LoadQuizzesFromActiveFolder();
         UpdateQuizDropdown();
-        UpdateActiveQuizzesDropdown();
     }
 
     private void CopyStandardQuizzesIfNeeded()
     {
-        // Проверка наличия пользовательских файлов
         string[] userQuizFiles = Directory.GetFiles(_quizDirectoryPath, "*.json");
 
         if (userQuizFiles.Length == 0)
         {
-            // Путь к стандартным тестам
             string standardQuizzesPath = Path.Combine(Application.dataPath, _standardQuizzesFolder);
             string[] standardQuizFiles = Directory.GetFiles(standardQuizzesPath, "*.json");
 
@@ -131,6 +126,8 @@ public class QuizLoader : MonoBehaviour
 
     private void LoadQuizzesFromActiveFolder()
     {
+        _activeQuizzes.Clear();
+
         if (!Directory.Exists(_activeQuizDirectoryPath))
         {
             Debug.LogError("Directory not found: " + _activeQuizDirectoryPath);
@@ -142,21 +139,13 @@ public class QuizLoader : MonoBehaviour
         foreach (string filePath in quizFiles)
         {
             string json = File.ReadAllText(filePath);
-            QuestionList quiz = ScriptableObject.CreateInstance<QuestionList>(); // Создаем экземпляр QuestionList
-            JsonUtility.FromJsonOverwrite(json, quiz); // Заполняем его данными из JSON
+            QuestionList quiz = ScriptableObject.CreateInstance<QuestionList>();
+            JsonUtility.FromJsonOverwrite(json, quiz);
 
-            // Проверяем, существует ли уже тест с таким названием
-            if (!_activeQuizzes.Exists(q => q.Name == quiz.Name))
+            if (!_activeQuizzes.Exists(q => q.Name == quiz.Name) && !_excludedQuizzes.Contains(quiz.Name))
             {
                 _activeQuizzes.Add(quiz);
             }
-        }
-
-        if (_activeQuizzes.Count <= 5)
-        {
-            _limitTests.gameObject.SetActive(false);
-            _addToActiveQuizzesButton.gameObject.SetActive(true);
-            return;
         }
 
         UpdateActiveQuizzesDropdown();
@@ -170,7 +159,10 @@ public class QuizLoader : MonoBehaviour
 
         foreach (var quiz in _quizList)
         {
-            quizNames.Add(quiz.Name);
+            if (!_excludedQuizzes.Contains(quiz.Name))
+            {
+                quizNames.Add(quiz.Name);
+            }
         }
 
         _quizDropdown.AddOptions(quizNames);
@@ -269,7 +261,7 @@ public class QuizLoader : MonoBehaviour
     public void SetActiveQuizzes(List<QuestionList> activeQuizzes)
     {
         _activeQuizzes = activeQuizzes;
-        UpdateQuizDropdown();
+        UpdateActiveQuizzesDropdown();
     }
 
     private void ClearQuestionDetails()
@@ -294,27 +286,23 @@ public class QuizLoader : MonoBehaviour
 
         int selectedQuizIndex = _quizDropdown.value;
 
-
         if (selectedQuizIndex >= 0 && selectedQuizIndex < _quizList.Count)
         {
             QuestionList selectedQuiz = _quizList[selectedQuizIndex];
 
-            // Проверка на уникальность теста в списке активных тестов
-            if (!_activeQuizzes.Any(q => q.Name == selectedQuiz.Name))
+            if (!_activeQuizzes.Any(q => q.Name == selectedQuiz.Name) && !_excludedQuizzes.Contains(selectedQuiz.Name))
             {
-                // Удаление теста из основного списка, чтобы избежать дублирования
                 _quizList.RemoveAt(selectedQuizIndex);
 
                 _activeQuizzes.Add(selectedQuiz);
                 UpdateActiveQuizzesDropdown();
 
-                // Перемещение файла теста в папку для активных тестов
                 MoveQuizToActiveFolder(selectedQuiz);
                 UpdateQuizDropdown();
             }
             else
             {
-                Debug.LogWarning("Выбранный тест уже добавлен в активные тесты.");
+                Debug.LogWarning("Выбранный тест уже добавлен в активные тесты или находится в исключенных.");
             }
         }
     }
@@ -329,18 +317,16 @@ public class QuizLoader : MonoBehaviour
             _activeQuizzes.RemoveAt(selectedQuizIndex);
             UpdateActiveQuizzesDropdown();
 
-            // Перемещение файла теста обратно в основную папку с тестами
             MoveQuizToMainFolder(selectedQuiz);
 
-            // Проверка на уникальность теста в основном списке и его добавление обратно, если не найден
-            if (!_quizList.Contains(selectedQuiz))
+            if (!_quizList.Contains(selectedQuiz) && !_excludedQuizzes.Contains(selectedQuiz.Name))
             {
                 _quizList.Add(selectedQuiz);
                 UpdateQuizDropdown();
             }
 
-            UpdateActiveQuizzesDropdown(); // Обновляем список активных тестов после удаления
-            UpdateQuizDropdown(); // Обновляем список всех тестов после удаления
+            UpdateActiveQuizzesDropdown();
+            UpdateQuizDropdown();
         }
 
         if (_activeQuizzes.Count <= 5)
@@ -356,13 +342,11 @@ public class QuizLoader : MonoBehaviour
         string quizFilePath = Path.Combine(_quizDirectoryPath, _quizFilePrefix + quiz.Name + ".json");
         string activeQuizFilePath = Path.Combine(Application.persistentDataPath, _activeQuizDataFolder, _quizFilePrefix + quiz.Name + ".json");
 
-        // Перемещение файла теста, если он не существует в папке активных тестов
         if (File.Exists(activeQuizFilePath))
         {
             File.Delete(activeQuizFilePath);
         }
 
-        // Перемещение файла теста
         File.Move(quizFilePath, activeQuizFilePath);
     }
 
@@ -374,10 +358,9 @@ public class QuizLoader : MonoBehaviour
         if (File.Exists(quizFilePath))
         {
             File.Delete(activeQuizFilePath);
-            return; // Не перемещаем файл, если он уже существует
+            return;
         }
 
-        // Перемещение файла теста обратно
         File.Move(activeQuizFilePath, quizFilePath);
     }
 
@@ -386,34 +369,29 @@ public class QuizLoader : MonoBehaviour
         foreach (var quiz in _activeQuizzes)
         {
             MoveQuizToMainFolder(quiz);
-            _quizList.Add(quiz); // Добавление тестов обратно в основной список
-        }
-
-        if (_activeQuizzes.Count <= 5)
-        {
-            _limitTests.gameObject.SetActive(false);
-            _addToActiveQuizzesButton.gameObject.SetActive(true);
-            return;
+            _quizList.Add(quiz);
         }
 
         _activeQuizzes.Clear();
 
         _activeQuizzes = _activeQuizzes.Distinct().ToList();
 
-        UpdateActiveQuizzesDropdown(); // Обновляем список активных тестов после удаления
-        UpdateQuizDropdown(); // Обновляем список всех тестов после удаления
-        UpdateQuestionDropdown(); // Обновляем список вопросов после удаления
+        UpdateActiveQuizzesDropdown();
+        UpdateQuizDropdown();
+        UpdateQuestionDropdown();
     }
 
     private void UpdateActiveQuizzesDropdown()
     {
-        // Обновление выпадающего списка активных тестов
         _activeQuizzesDropdown.ClearOptions();
         List<string> quizNames = new List<string>();
 
         foreach (var quiz in _activeQuizzes)
         {
-            quizNames.Add(quiz.Name);
+            if (!_excludedQuizzes.Contains(quiz.Name))
+            {
+                quizNames.Add(quiz.Name);
+            }
         }
 
         _activeQuizzesDropdown.AddOptions(quizNames);
@@ -422,10 +400,7 @@ public class QuizLoader : MonoBehaviour
         {
             _limitTests.gameObject.SetActive(false);
             _addToActiveQuizzesButton.gameObject.SetActive(true);
-            return;
         }
-
-        LoadQuizzesFromActiveFolder();
     }
 
     public List<QuestionList> GetActiveQuizzes()

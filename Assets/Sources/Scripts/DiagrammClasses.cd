@@ -87,14 +87,14 @@
   <Class Name="QuestionData">
     <Position X="18.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAABBCAAAAAAAAAAAAIAEQAAAAIBAAEA=</HashCode>
+      <HashCode>BAAABAAACAAAAAAAAAAAAAAAAAAAAIAEQAAAAIBAAEA=</HashCode>
       <FileName>Assets\Sources\Scripts\Tests\QuestionData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="QuestionList">
     <Position X="15.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABBAAACAAQACAAIAAAUJAAAAAIAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAhAAACAAQAAAAAAAAUJAAAAAIAAAA=</HashCode>
       <FileName>Assets\Sources\Scripts\Tests\QuestionList.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -104,7 +104,7 @@
   <Class Name="QuizContainer">
     <Position X="2.75" Y="1.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAiAAQAAJAAECgAAgCAAQAAFAAAAAQQAAGEA=</HashCode>
+      <HashCode>gAAAAAAAgiAIQAAJAQECgAAgKCAQAAFAAAAAQQAgGEA=</HashCode>
       <FileName>Assets\Sources\Scripts\Tests\QuizContainer.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -189,7 +189,7 @@
   <Class Name="PlayerStatsData">
     <Position X="0.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgIAAACCAAAEYAAEAAhAAAAAAAAAAAAAIAAAAAIAAA=</HashCode>
+      <HashCode>AAgIAAACCAAAEYAAEAAhAAAAAAAAAAAAIIAAAAAIAAA=</HashCode>
       <FileName>Assets\Sources\Scripts\Saves\PlayerStatsData.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -210,12 +210,40 @@
   <Class Name="ConstantsSavers">
     <Position X="6.75" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACgAAAAIAMCEwAAAAAAgAAEgIwAIIAAAAIICAAABAAA=</HashCode>
+      <HashCode>ACgAAAAIAMCEwAAAAAAgAAEgIwAIJAAAAIKCAAABAAA=</HashCode>
       <FileName>Assets\Sources\Scripts\Saves\JSONSaver.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="JSONSaver" />
     </ShowAsAssociation>
+  </Class>
+  <Class Name="PriceActivity">
+    <Position X="10.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAQAAACAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Saves\PriceActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PriceData">
+    <Position X="10.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Saves\PriceData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PriceSaver">
+    <Position X="14" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAgASAgQCUQAAoAAACAAAAAAAgAAIAQAAAEAgA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Saves\PriceSaver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StarsSaver">
+    <Position X="12.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAgAAAICgAQAgAgAAAAAAAgAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Sources\Scripts\Saves\StarsSaver.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

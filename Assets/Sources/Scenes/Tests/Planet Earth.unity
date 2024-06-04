@@ -1159,7 +1159,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 371df8a7420a7a8498731ef28ca6d0d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d5fe0f56b0be3b4187d663c3766427b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1574,7 +1574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef8fc984b11c074ab0c3ec30840947c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _questions: {fileID: 11400000, guid: 98375de2eaae39c45a213dc63d317daa, type: 2}
+  _isRandomFile: 0
+  _quizLoadFileName: "Quiz_\u041F\u043B\u0430\u043D\u0435\u0442\u0430 \u0417\u0435\u043C\u043B\u044F.json"
 --- !u!1001 &904505673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2493,7 +2494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 357.28656, y: 785.94855}
+  scrollPos: {x: 467.63138, y: 934.2246}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 588
@@ -2505,9 +2506,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1384018300}
-  selectedCommands:
-  - {fileID: 1384018321}
+  - {fileID: 1384018056}
+  selectedCommands: []
   variables:
   - {fileID: 1384018271}
   - {fileID: 1384018110}
@@ -2998,8 +2998,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -43.44597
-    y: -561.957
+    x: -45.170105
+    y: -565.4052
     width: 112.068924
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -7457,7 +7457,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1384018332
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7471,7 +7471,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &1384018333
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

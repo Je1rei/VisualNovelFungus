@@ -82,10 +82,7 @@ MonoBehaviour:
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 029b85f8c28cc864fb5bc95af2921c16, type: 3}
-  - {fileID: 21300000, guid: 958681e29ea9c8d49af6b7da4d3884cf, type: 3}
-  - {fileID: 21300000, guid: a2bb139d4a7c9c84d89562c99486a679, type: 3}
-  - {fileID: 21300000, guid: 7fb69c02a4634eb4f82f624d46fb944e, type: 3}
+  - {fileID: 21300000, guid: aabc4535799d14941a6d6642c9916bd8, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: "\u0421\u0415\u041C\u0410"
@@ -137,16 +134,7 @@ MonoBehaviour:
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 48cc00a5941c35942afc5d9b3de8ec40, type: 3}
-  - {fileID: 21300000, guid: 0823f0615f16c7b4eb90894f66a0c10a, type: 3}
-  - {fileID: 21300000, guid: e3318c6209b167a48adb12e464160a8b, type: 3}
-  - {fileID: 21300000, guid: da2927e4a42552241945ed91eb7bc733, type: 3}
-  - {fileID: 21300000, guid: 951348ef245b9044eb20068d681b0757, type: 3}
-  - {fileID: 21300000, guid: 5e7073a0e269ce343bb07b9e1ffd77d1, type: 3}
-  - {fileID: 21300000, guid: bacd876f93229ad44a37fd31cdafd3d0, type: 3}
-  - {fileID: 21300000, guid: 287d724189f8bd84e8ad51874f502687, type: 3}
-  - {fileID: 21300000, guid: aecb56436bdf8904f9a11883505b77f7, type: 3}
-  - {fileID: 21300000, guid: 734c3d4ac00b91847923bdf5e12cd679, type: 3}
+  - {fileID: 21300000, guid: 03fbec517e48e2b42a3d3dd98183486b, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: "\u0413\u043B\u0430\u0432\u043D\u044B\u0439 \u0433\u0435\u0440\u043E\u0439!"
@@ -198,19 +186,7 @@ MonoBehaviour:
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 7f3241f28a87f164e821703a6a38e13e, type: 3}
-  - {fileID: 21300000, guid: e0a6203b34234bd448bb9dbb64ab0861, type: 3}
-  - {fileID: 21300000, guid: aebf0ba785c33ad4bbb76f0ebbe801c1, type: 3}
-  - {fileID: 21300000, guid: 451c8f10521494a46ba2673788f4f019, type: 3}
-  - {fileID: 21300000, guid: 84a526f8ca709bf448f5d61384241ca9, type: 3}
-  - {fileID: 21300000, guid: 331d64bee8e0f3743be0d6ce521af4ee, type: 3}
-  - {fileID: 21300000, guid: fb303223a6e6bdb47856fdc571a12b31, type: 3}
-  - {fileID: 21300000, guid: 4cce1327fc1e5a949aabeb209a0c223b, type: 3}
-  - {fileID: 21300000, guid: 263542abe425bf74a8d3b5fdfa1b1cf6, type: 3}
-  - {fileID: 21300000, guid: d03d3c577026785419bd09594ffe1a4d, type: 3}
-  - {fileID: 21300000, guid: 63419877c8ab4b046b108cef2dc4686b, type: 3}
-  - {fileID: 21300000, guid: 05ff85de4bfbace4084fb436604f6bd5, type: 3}
-  - {fileID: 21300000, guid: 6dff3434a2b535c4a940cf173e084135, type: 3}
+  - {fileID: 21300000, guid: 2d5aff3d41d6a9244a1b3e1938206b21, type: 3}
   portraitsFace: 2
   setSayDialog: {fileID: 0}
   description: 'Alisa

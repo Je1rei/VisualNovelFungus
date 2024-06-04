@@ -1,12 +1,24 @@
 ﻿using Fungus;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class JSONSaver : MonoBehaviour
 {
     private string _purchasedVariable = "";
+
+    [SerializeField] private TMP_InputField _adminPasswordInput;
+    [SerializeField] private TMP_Text _adminPasswordText;
+    [SerializeField] private Button _saveAdminPasswordButton;
+
+    [SerializeField] private TMP_InputField _passwordInputCheck;
+    [SerializeField] private Panel _passwordInputPanel;
+    [SerializeField] private Panel _adminPanel;
+    [SerializeField] private TMP_Text _errorPass;
+    [SerializeField] private Button _passwordButtonCheck;
 
     private Flowchart _flowchart;
 
@@ -16,6 +28,8 @@ public class JSONSaver : MonoBehaviour
     private PlayerData _currentPlayer;
     private PlayerStatsData _currentPlayerStats;
     private Container _container;
+    private string _adminPassword;
+    private string _correctAdminPassword = "admin";
 
     private void OnEnable()
     {
@@ -25,6 +39,17 @@ public class JSONSaver : MonoBehaviour
     private void Awake()
     {
         _filePath = Path.Combine(Application.persistentDataPath, ConstantsSavers._playerDataFileName);
+    }
+
+    private void Start()
+    {
+        if (_saveAdminPasswordButton != null)
+            _saveAdminPasswordButton.onClick.AddListener(SaveAdminPassword);
+
+        if (_passwordButtonCheck != null)
+            _passwordButtonCheck.onClick.AddListener(CheckAdminPasswordAndActivatePanel);
+
+        LoadAdminPassword();
     }
 
     private void OnDisable()
@@ -37,8 +62,9 @@ public class JSONSaver : MonoBehaviour
         FindMaxID();
 
         string playerName = _flowchart.GetStringVariable(ConstantsSavers._playerNameVar);
+        string adminPassword = "admin";
 
-        _currentPlayer = new PlayerData(_nextID, playerName, ConstantsSavers._startLocationScene);
+        _currentPlayer = new PlayerData(_nextID, playerName, ConstantsSavers._startLocationScene, adminPassword);
         _currentPlayerStats = _currentPlayer.GetStats();
 
         _nextID++;
@@ -121,6 +147,7 @@ public class JSONSaver : MonoBehaviour
             string jsonDataPlayer = File.ReadAllText(playerFilePath);
 
             _currentPlayer = JsonUtility.FromJson<PlayerData>(jsonDataPlayer);
+            _correctAdminPassword = _currentPlayer.AdminPassword;
 
             LoadPlayerStats(_currentPlayer);
             LoadPlayerIsPurchased();
@@ -136,12 +163,48 @@ public class JSONSaver : MonoBehaviour
             SaveInt(ConstantsSavers._closedGames, _currentPlayerStats.ClosedGames);
             SaveInt(ConstantsSavers._closedTests, _currentPlayerStats.ClosedTests);
             SaveInt(ConstantsSavers._coinCollected, _currentPlayerStats.CoinCollected);
+            SaveString(ConstantsSavers._passwordAdmin, _currentPlayer.AdminPassword);
 
         }
         else
         {
             Debug.LogWarning("Файл даты игрока не найден: " + playerFilePath);
             SaveBool(ConstantsSavers._isLoadedVar, false);
+        }
+    }
+
+    private void LoadAdminPassword()
+    {
+        _adminPassword = _flowchart.GetStringVariable(ConstantsSavers._passwordAdmin);
+
+        if (_adminPasswordText != null)
+        {
+            _adminPasswordText.text = _adminPassword; // Устанавливаем текущее значение в TMP_Text
+        }
+    }
+
+    private void SaveAdminPassword()
+    {
+        if (_flowchart != null)
+        {
+            _adminPassword = _adminPasswordInput.text; // Получаем значение из поля ввода
+
+            // Устанавливаем новое значение пароля администратора в объекте _currentPlayer
+            if (_currentPlayer != null)
+            {
+                _currentPlayer.SetAdminPassword(_adminPassword);
+            }
+
+            _flowchart.SetStringVariable(ConstantsSavers._passwordAdmin, _adminPassword);
+            Debug.Log("Admin password saved: " + _adminPassword);
+
+            if (_adminPasswordText != null)
+            {
+                _adminPasswordText.text = _adminPassword; // Обновляем отображение в TMP_Text
+            }
+
+            // Сохраняем игрока после обновления пароля администратора
+            SavePlayer(_currentPlayer);
         }
     }
 
@@ -166,6 +229,27 @@ public class JSONSaver : MonoBehaviour
     {
         string level = _flowchart.GetStringVariable(ConstantsSavers._purchasedVar);
         _currentPlayer.AddPurchase(level);
+    }
+
+    private void CheckAdminPasswordAndActivatePanel()
+    {
+        if (_flowchart != null)
+        {
+            string correctPassword = _currentPlayer != null ? _currentPlayer.AdminPassword : "";
+
+            if (_passwordInputCheck.text == correctPassword)
+            {
+                _passwordInputCheck.text = "";
+                _adminPanel.gameObject.SetActive(true);
+                _errorPass.gameObject.SetActive(false);
+                _passwordInputPanel.gameObject.SetActive(false);
+            }
+            else
+            {
+                _errorPass.gameObject.SetActive(true);
+                _passwordInputCheck.text = "";
+            }
+        }
     }
 
     private void SavePlayerStats(PlayerData playerData)
@@ -227,7 +311,6 @@ public class JSONSaver : MonoBehaviour
         Load();
     }
 }
-
 public static class ConstantsSavers
 {
     public const string _mainMenuScene = "Main Menu";
@@ -236,7 +319,7 @@ public static class ConstantsSavers
     public const string _flowChartTag = "FlowChart";
     public const string _playerDataFileName = "playerData";
     public const string _playerStatsFileName = "playerStats";
-
+    public const string _passwordAdmin = "passwordAdmin";
     public const string _totalCollected = "totalCollectedGame";
     public const string _closedGames = "closedGames";
     public const string _closedTests = "closedTests";

@@ -22,17 +22,21 @@ public partial class QuizContainer : MonoBehaviour
     private const string _rightAnswerTag = "rightAnswer";
     private const string _userAnswerTag = "choisedAnswer";
 
+    [SerializeField] private bool _isRandomFile = true;
+    [SerializeField] private string _quizLoadFileName = "";
+
     private Flowchart _flowchart;
 
     private QuestionList _questions;
+    private string _quizDirectoryActivePath;
     private string _quizDirectoryPath;
-
     private QuestionData _currentQuestion;
     private int _currentQuestionIndex;
 
     private void Awake()
     {
-        _quizDirectoryPath = Path.Combine(Application.persistentDataPath, _activeQuizDataFolder);
+        _quizDirectoryPath = Path.Combine(Application.persistentDataPath, _quizDataFolder);
+        _quizDirectoryActivePath = Path.Combine(Application.persistentDataPath, _activeQuizDataFolder);
         LoadQuizFromJSON();
     }
 
@@ -56,18 +60,45 @@ public partial class QuizContainer : MonoBehaviour
 
     public void LoadQuizFromJSON()
     {
-        if (!Directory.Exists(_quizDirectoryPath))
+        if (!Directory.Exists(_quizDirectoryActivePath))
         {
-            Debug.LogError("Directory not found: " + _quizDirectoryPath);
+            Debug.LogError("Directory not found: " + _quizDirectoryActivePath);
             return;
         }
 
-        string[] quizFiles = Directory.GetFiles(_quizDirectoryPath, "*.json");
+        string[] quizFiles = Directory.GetFiles(_quizDirectoryActivePath, "*.json");
+        string quizFile = null;
 
-         if (quizFiles.Length > 0)
+        if (_isRandomFile)
         {
-            string randomQuizFile = quizFiles[UnityEngine.Random.Range(0, quizFiles.Length)]; // Случайный выбор файла
-            string json = File.ReadAllText(randomQuizFile);
+            if (quizFiles.Length > 0)
+            {
+                quizFile = quizFiles[UnityEngine.Random.Range(0, quizFiles.Length)]; // Random file selection
+            }
+            else
+            {
+                Debug.LogError("No quiz files found in directory: " + _quizDirectoryActivePath);
+                return;
+            }
+        }
+        else
+        {
+            string quizFilePath = Path.Combine(_quizDirectoryPath, _quizLoadFileName);
+
+            if (File.Exists(quizFilePath))
+            {
+                quizFile = quizFilePath; // Specific file selection
+            }
+            else
+            {
+                Debug.LogError("Specified quiz file not found: " + quizFilePath);
+                return;
+            }
+        }
+
+        if (!string.IsNullOrEmpty(quizFile))
+        {
+            string json = File.ReadAllText(quizFile);
             _questions = ScriptableObject.CreateInstance<QuestionList>();
             JsonUtility.FromJsonOverwrite(json, _questions);
 
@@ -80,10 +111,34 @@ public partial class QuizContainer : MonoBehaviour
                 Debug.LogError("Quiz is null or has no questions.");
             }
         }
-        else
-        {
-            Debug.LogError("No quiz files found in directory: " + _quizDirectoryPath);
-        }
+
+        //if (quizFiles.Length > 0)
+        //{
+        //    string[] quizFilesDefault = Directory.GetFiles(_quizDirectoryPath, "*.json");
+        //    string quizFile = quizFilesDefault[]
+
+        //    if (_isRandomFile)
+        //    {
+        //        quizFile = quizFiles[UnityEngine.Random.Range(0, quizFiles.Length)]; // Случайный выбор файла
+        //    }
+
+        //    string json = File.ReadAllText(quizFile);
+        //    _questions = ScriptableObject.CreateInstance<QuestionList>();
+        //    JsonUtility.FromJsonOverwrite(json, _questions);
+
+        //    if (_questions != null && _questions.Questions.Count > 0)
+        //    {
+        //        Debug.Log("Quiz loaded: " + _questions.Name);
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("Quiz is null or has no questions.");
+        //    }
+        //}
+        //else
+        //{
+        //    Debug.LogError("No quiz files found in directory: " + _quizDirectoryActivePath);
+        //}
     }
 
     public void SetNextQuestion()
@@ -178,34 +233,6 @@ public partial class QuizContainer : MonoBehaviour
         Debug.Log("Set Flowchart string variable: " + key + " = " + value);
 
     }
-
-    //public void SetVariablesFlowchart()
-    //{
-    //    if (_questions != null && _questions.Questions.Count > 0)
-    //    {
-    //        _currentQuestion = _questions.Questions.FirstOrDefault(q => !q.Used);
-
-    //        if (_currentQuestion != null)
-    //        {
-    //            SaveString(_questionTag, _currentQuestion.Question);
-    //            SaveString(_firstAnswerTag, _currentQuestion.Options[0]);
-    //            SaveString(_secondAnswerTag, _currentQuestion.Options[1]);
-    //            SaveString(_thirdAnswerTag, _currentQuestion.Options[2]);
-    //            SaveString(_rightAnswerTag, _currentQuestion.Options[_currentQuestion.CorrectOptionIndex]);
-
-    //            _currentQuestion.SetUsed(true);
-    //        }
-    //        else
-    //        {
-    //            Debug.LogWarning("No unused questions found.");
-    //        }
-    //    }
-    //    else
-    //    {
-    //        Debug.LogWarning("Questions list is null or empty.");
-    //    }
-    //}
-
 
     public void ShuffleQuestions()
     {

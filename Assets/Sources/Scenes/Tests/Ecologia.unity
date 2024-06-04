@@ -1170,7 +1170,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 371df8a7420a7a8498731ef28ca6d0d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d5fe0f56b0be3b4187d663c3766427b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1585,6 +1585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef8fc984b11c074ab0c3ec30840947c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isRandomFile: 1
+  _quizLoadFileName: 
 --- !u!1001 &904505673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2509,7 +2511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 462.1768, y: 731.642}
+  scrollPos: {x: 301.20108, y: 813.34894}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 588
@@ -2521,7 +2523,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1384018254}
+  - {fileID: 1384017924}
   selectedCommands: []
   variables:
   - {fileID: 1384018271}
@@ -2566,7 +2568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -47.23033
+    x: -46.01082
     y: -438.3326
     width: 104.87804
     height: 40
@@ -4581,7 +4583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 92.6774
+    x: 93.89691
     y: -482.39676
     width: 132.92682
     height: 40

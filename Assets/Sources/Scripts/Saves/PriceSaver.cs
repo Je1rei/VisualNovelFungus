@@ -22,6 +22,7 @@ public class PriceSaver : MonoBehaviour
 
     private List<string> _variableKeys = new List<string>();
 
+
     private void Start()
     {
         PopulateDropdown();

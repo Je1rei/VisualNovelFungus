@@ -608,7 +608,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c820ce246af6c3f42953a8d413a661f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abe34664ca5cfe04095b924d57d5c724, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -677,7 +677,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c55a7c428aff3c41bd1fe50569f0368, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c0a92b168e84cc4bae238c4ebba89ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1257,7 +1257,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4867f25030cec8a4eb0a3e03b5e33a80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55f29711ea01cb040a43b1e5ffb236b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1483,11 +1483,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 327.5354, y: 173.7395}
+  scrollPos: {x: 752.22705, y: 296.32568}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 579
-  zoom: 0.64000034
+  zoom: 0.6100004
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1495,7 +1495,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1384018075}
+  - {fileID: 1384018032}
   selectedCommands: []
   variables:
   - {fileID: 1384018015}
@@ -1553,9 +1553,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 66.32504
+    x: 69.31012
     y: 35.9229
-    width: 124.99996
+    width: 123.77045
     height: 40
   tint: {r: 1, g: 0, b: 0, a: 1}
   useCustomTint: 1
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 738987179}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: bacd876f93229ad44a37fd31cdafd3d0, type: 3}
+  portrait: {fileID: 21300000, guid: 03fbec517e48e2b42a3d3dd98183486b, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 1203879991}
@@ -1640,7 +1640,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 903754875}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: e0a6203b34234bd448bb9dbb64ab0861, type: 3}
+  portrait: {fileID: 21300000, guid: 2d5aff3d41d6a9244a1b3e1938206b21, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 1203879991}
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 738987179}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 951348ef245b9044eb20068d681b0757, type: 3}
+  portrait: {fileID: 21300000, guid: 03fbec517e48e2b42a3d3dd98183486b, type: 3}
   offset: 0
   fromPosition: {fileID: 1203879991}
   toPosition: {fileID: 71384570}
@@ -1875,7 +1875,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -196.3101
     y: -89.07362
-    width: 142.18745
+    width: 141.80322
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1907,8 +1907,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 227.88493
-    y: 135.90916
-    width: 137.49995
+    y: 137.47166
+    width: 138.52454
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1939,7 +1939,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 903754875}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: e0a6203b34234bd448bb9dbb64ab0861, type: 3}
+  portrait: {fileID: 21300000, guid: 2d5aff3d41d6a9244a1b3e1938206b21, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 1134008559}
@@ -1986,9 +1986,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 93.80572
-    y: 240.05672
-    width: 89.062485
+    x: 96.9376
+    y: 241.69606
+    width: 87.704895
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2061,7 +2061,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 738987179}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: bacd876f93229ad44a37fd31cdafd3d0, type: 3}
+  portrait: {fileID: 21300000, guid: 03fbec517e48e2b42a3d3dd98183486b, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 903754875}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 84a526f8ca709bf448f5d61384241ca9, type: 3}
+  portrait: {fileID: 21300000, guid: 2d5aff3d41d6a9244a1b3e1938206b21, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -2276,7 +2276,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 903754875}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: d03d3c577026785419bd09594ffe1a4d, type: 3}
+  portrait: {fileID: 21300000, guid: 2d5aff3d41d6a9244a1b3e1938206b21, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -2306,7 +2306,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 738987179}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: bacd876f93229ad44a37fd31cdafd3d0, type: 3}
+  portrait: {fileID: 21300000, guid: 03fbec517e48e2b42a3d3dd98183486b, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -2336,7 +2336,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 738987179}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 287d724189f8bd84e8ad51874f502687, type: 3}
+  portrait: {fileID: 21300000, guid: 03fbec517e48e2b42a3d3dd98183486b, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -2366,7 +2366,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 738987179}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 951348ef245b9044eb20068d681b0757, type: 3}
+  portrait: {fileID: 21300000, guid: 03fbec517e48e2b42a3d3dd98183486b, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -2412,8 +2412,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 149.32436
-    y: 744.6234
-    width: 124.99996
+    y: 742.1234
+    width: 123.77045
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2518,7 +2518,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 71.03546
     y: -88.40765
-    width: 107.81247
+    width: 110.6557
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2662,7 +2662,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -507.68335
     y: 44.745605
-    width: 92.18748
+    width: 94.26227
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2697,7 +2697,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -246.19069
     y: 33.97662
-    width: 199.99992
+    width: 199.18024
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2841,8 +2841,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -531.3091
-    y: 249.5123
-    width: 140.62495
+    y: 254.43033
+    width: 141.80322
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2944,7 +2944,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 738987179}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 03fbec517e48e2b42a3d3dd98183486b, type: 3}
   offset: 0
   fromPosition: {fileID: 2070717247}
   toPosition: {fileID: 71384570}
@@ -2974,7 +2974,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 903754875}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2d5aff3d41d6a9244a1b3e1938206b21, type: 3}
   offset: 0
   fromPosition: {fileID: 1513307650}
   toPosition: {fileID: 1134008559}
@@ -3228,7 +3228,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 200498251}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 958681e29ea9c8d49af6b7da4d3884cf, type: 3}
+  portrait: {fileID: 21300000, guid: aabc4535799d14941a6d6642c9916bd8, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 1203879991}
@@ -3283,7 +3283,7 @@ MonoBehaviour:
     \u0438 \u043E \u0442\u043E\u043C, \u043A\u0430\u043A \u043C\u044B \u0442\u0430\u043A
     \u043C\u0430\u043B\u044B \u0432 \u044D\u0442\u043E\u0439 \u0431\u0435\u0441\u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438."
   description: 
-  character: {fileID: 0}
+  character: {fileID: 200498251}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3345,7 +3345,7 @@ MonoBehaviour:
     \u0432\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u043A \u0434\u043E\u043C\u0443
     \u0438 \u043F\u0440\u0438\u0431\u0440\u0430\u0442\u044C \u0442\u0430\u043C \u043C\u0443\u0441\u043E\u0440!"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 738987179}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3372,7 +3372,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -220.1873
     y: 259.1071
-    width: 129.68745
+    width: 127.04913
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3543,7 +3543,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 903754875}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2d5aff3d41d6a9244a1b3e1938206b21, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 0}
@@ -3682,7 +3682,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -469.70456
     y: -134.82008
-    width: 131.24995
+    width: 135.24585
     height: 40
   tint: {r: 0, g: 0, b: 0, a: 1}
   useCustomTint: 1
@@ -3726,9 +3726,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -646.39294
-    y: -139.60826
-    width: 121.87496
+    x: -643.40784
+    y: -141.1008
+    width: 118.85242
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3826,7 +3826,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 537.7725
     y: -77.69309
-    width: 93.74998
+    width: 92.622925
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3907,7 +3907,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 156.29973
     y: 430.6506
-    width: 170.31244
+    width: 169.67206
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4070,8 +4070,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 215.26488
-    y: 349.02887
-    width: 115.62496
+    y: 347.46637
+    width: 112.295044
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4203,7 +4203,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 82.194305
     y: 347.46637
-    width: 84.374985
+    width: 84.42621
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4230,9 +4230,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 307.99347
+    x: 310.97852
     y: -202.08942
-    width: 148.43744
+    width: 148.3606
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4405,7 +4405,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1384018096
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4632,7 +4632,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 30d2debeca00f4d4eb7f96ac89c91682, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 014294d06bb6c7a4ca0a3aa926a07dfb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
