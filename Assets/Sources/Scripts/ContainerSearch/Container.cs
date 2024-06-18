@@ -44,8 +44,6 @@ public class Container : MonoBehaviour
     public void DecreaseCoinCollected()
     {
         CoinCollected -= PriceStars;
-
-        Debug.Log($"DECREASE {CoinCollected} -= {PriceStars} ()");
     }
 
     public void IncreaseCoinCollected()

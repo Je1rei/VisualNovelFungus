@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 38.430367, y: 307.32446}
+  scrollPos: {x: 247.00172, y: 328.75284}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 457
@@ -1074,8 +1074,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1384018046}
-  selectedCommands: []
+  - {fileID: 1384017924}
+  selectedCommands:
+  - {fileID: 1384018021}
   variables:
   - {fileID: 1384018015}
   - {fileID: 1384018014}
@@ -1132,7 +1133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 70.73224
+    x: 72.16081
     y: 45.288418
     width: 128.5714
     height: 40
@@ -1595,8 +1596,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 103.77686
-    y: 435.97668
+    x: 105.20544
+    y: 433.11957
     width: 182.85709
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2505,8 +2506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 499.24896
-    y: 244.78079
+    x: 512.1061
+    y: 241.92365
     width: 154.28568
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2743,7 +2744,7 @@ MonoBehaviour:
   showAlways: 1
   showCount: 1
   extendPrevious: 0
-  fadeWhenDone: 1
+  fadeWhenDone: 0
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0

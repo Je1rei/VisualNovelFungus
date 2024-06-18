@@ -1,5 +1,4 @@
 ﻿using Fungus;
-using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -179,7 +178,7 @@ public class JSONSaver : MonoBehaviour
 
         if (_adminPasswordText != null)
         {
-            _adminPasswordText.text = _adminPassword; // Устанавливаем текущее значение в TMP_Text
+            _adminPasswordText.text = _adminPassword; 
         }
     }
 
@@ -187,9 +186,8 @@ public class JSONSaver : MonoBehaviour
     {
         if (_flowchart != null)
         {
-            _adminPassword = _adminPasswordInput.text; // Получаем значение из поля ввода
+            _adminPassword = _adminPasswordInput.text; 
 
-            // Устанавливаем новое значение пароля администратора в объекте _currentPlayer
             if (_currentPlayer != null)
             {
                 _currentPlayer.SetAdminPassword(_adminPassword);
@@ -200,10 +198,9 @@ public class JSONSaver : MonoBehaviour
 
             if (_adminPasswordText != null)
             {
-                _adminPasswordText.text = _adminPassword; // Обновляем отображение в TMP_Text
+                _adminPasswordText.text = _adminPassword; 
             }
 
-            // Сохраняем игрока после обновления пароля администратора
             SavePlayer(_currentPlayer);
         }
     }

@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using UnityEngine;
 using Fungus;
-using AYellowpaper.SerializedCollections;
 using System.Linq;
 using System.IO;
 
@@ -73,7 +69,7 @@ public partial class QuizContainer : MonoBehaviour
         {
             if (quizFiles.Length > 0)
             {
-                quizFile = quizFiles[UnityEngine.Random.Range(0, quizFiles.Length)]; // Random file selection
+                quizFile = quizFiles[UnityEngine.Random.Range(0, quizFiles.Length)]; 
             }
             else
             {
@@ -87,7 +83,7 @@ public partial class QuizContainer : MonoBehaviour
 
             if (File.Exists(quizFilePath))
             {
-                quizFile = quizFilePath; // Specific file selection
+                quizFile = quizFilePath; 
             }
             else
             {
@@ -111,34 +107,6 @@ public partial class QuizContainer : MonoBehaviour
                 Debug.LogError("Quiz is null or has no questions.");
             }
         }
-
-        //if (quizFiles.Length > 0)
-        //{
-        //    string[] quizFilesDefault = Directory.GetFiles(_quizDirectoryPath, "*.json");
-        //    string quizFile = quizFilesDefault[]
-
-        //    if (_isRandomFile)
-        //    {
-        //        quizFile = quizFiles[UnityEngine.Random.Range(0, quizFiles.Length)]; // Случайный выбор файла
-        //    }
-
-        //    string json = File.ReadAllText(quizFile);
-        //    _questions = ScriptableObject.CreateInstance<QuestionList>();
-        //    JsonUtility.FromJsonOverwrite(json, _questions);
-
-        //    if (_questions != null && _questions.Questions.Count > 0)
-        //    {
-        //        Debug.Log("Quiz loaded: " + _questions.Name);
-        //    }
-        //    else
-        //    {
-        //        Debug.LogError("Quiz is null or has no questions.");
-        //    }
-        //}
-        //else
-        //{
-        //    Debug.LogError("No quiz files found in directory: " + _quizDirectoryActivePath);
-        //}
     }
 
     public void SetNextQuestion()
@@ -169,24 +137,16 @@ public partial class QuizContainer : MonoBehaviour
 
         if (userAnswer == correctAnswer)
         {
-            Debug.Log("Correct Answer");
-
-            // Получаем текущее значение переменной totalCollected
             int totalCollected = _flowchart.GetIntegerVariable("totalCollected");
-
-            // Получаем значение, которое нужно добавить к totalCollected
             int valueEach = _flowchart.GetIntegerVariable("valueEach");
 
-            // Прибавляем значение каждого правильного ответа
             totalCollected += valueEach;
 
-            // Устанавливаем новое значение переменной totalCollected
             _flowchart.SetIntegerVariable("totalCollected", totalCollected);
         }
         else
         {
             Debug.Log("Incorrect Answer");
-            // Perform action for incorrect answer
         }
 
         SetNextQuestion();
@@ -196,13 +156,10 @@ public partial class QuizContainer : MonoBehaviour
     {
         if (_questions != null)
         {
-            // Получаем общее количество вопросов в тесте
             int totalQuestions = _questions.Questions.Count;
 
-            // Вычисляем 3/4 от общего количества вопросов
             int halfCollectedValue = totalQuestions * 3 / 4;
 
-            // Устанавливаем значение переменной halfcollected в Flowchart
             _flowchart.SetIntegerVariable("halfCollect", halfCollectedValue);
             Debug.Log("Set halfcollected variable in Flowchart: " + halfCollectedValue);
         }

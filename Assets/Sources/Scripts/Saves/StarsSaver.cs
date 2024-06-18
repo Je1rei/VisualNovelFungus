@@ -35,7 +35,6 @@ public class StarsSaver : MonoBehaviour
     {
         if (_flowchart != null)
         {
-            // Получаем текущее количество звезд из переменной _coincollected
             int currentStars = _flowchart.GetIntegerVariable(ConstantsSavers._coinCollected);
             return currentStars;
         }
@@ -55,7 +54,6 @@ public class StarsSaver : MonoBehaviour
 
             if (difference > 0)
             {
-                // Увеличиваем количество монет в контейнере
                 for (int i = 0; i < difference; i++)
                 {
                     container.IncreaseCoinCollected();
@@ -63,7 +61,6 @@ public class StarsSaver : MonoBehaviour
             }
             else if (difference < 0)
             {
-                // Уменьшаем количество монет в контейнере
                 for (int i = 0; i < Mathf.Abs(difference); i++)
                 {
                     container.DecreaseCoinCollected();

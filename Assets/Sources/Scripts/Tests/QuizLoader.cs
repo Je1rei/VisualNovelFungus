@@ -25,7 +25,7 @@ public class QuizLoader : MonoBehaviour
     [SerializeField] private Button _removeFromActiveQuizzesButton;
     [SerializeField] private Button _clearActiveQuizzesButton;
 
-    [SerializeField] private List<string> _excludedQuizzes;  // List to hold excluded quiz names
+    [SerializeField] private List<string> _excludedQuizzes;  
 
     private List<QuestionList> _quizList = new List<QuestionList>();
     private List<QuestionList> _activeQuizzes = new List<QuestionList>();

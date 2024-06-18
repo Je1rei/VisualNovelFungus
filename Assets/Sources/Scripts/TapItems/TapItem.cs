@@ -32,7 +32,6 @@ public class TapItem<T> : MonoBehaviour, IPointerClickHandler where T : MonoBeha
     {
         yield return new WaitForSeconds(_delay); 
 
-        //_container.SetCollected();
         Destroy(gameObject);
     }
 }
